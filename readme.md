@@ -6,10 +6,6 @@
 
 </div>
 
-|              **BEFORE**              |              **AFTER**               |
-| :----------------------------------: | :----------------------------------: |
-| ![](https://i.imgur.com/nJtYrYN.png) | ![](https://i.imgur.com/5iRDGgQ.png) |
-
 ## 📂 Installation
 
 You have to install [Stylus](https://add0n.com/stylus.html) and then click on the install Better Image Viewer below.
