@@ -1,0 +1,65 @@
+/* ==UserStyle==
+@name           Better Image Viewer
+@namespace      https://userstyles.world/user/sapondanaisriwan
+@description    Better Image Viewer makes image viewing more fun and cool 😎
+@author         sapondanaisriwan <sapondanaisriwan@gmail.com> (https://github.com/sapondanaisriwan) [Adashima#4066]
+
+@version        1.0.0
+@license        CC-BY-SA-4.0
+@preprocessor   stylus
+
+@advanced range customRadius          "⚙️ Roundness" [0, 0, 50, 1, '%']
+@advanced range customBlur          "⚙️ Blurriness" [15, 0, 25, 1, 'px']
+
+==/UserStyle== */
+@-moz-document regexp(".*.(png|jpg|gif|webp)$") {
+
+    /* 
+        Thanks for cubiq#3296 helping me 
+        Test: https://media.tenor.com/8r-Gk4kA0f4AAAAd/cool-cat.gif
+    */
+
+    /* Variables */
+    i=!important;
+    t=transparent;
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        position: relative;
+
+        &::before {
+            content: "";
+
+            position: absolute;
+            left: 0;
+            right: 0;
+
+            z-index: -1;
+
+            background-image: url();
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+
+            filter: blur(customBlur);
+            -webkit-filter: blur(customBlur);
+            height: 100vh;
+        }
+
+        > img {
+            background-color: t i;
+
+            /* Centered the image */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: customRadius;
+        }
+    }
+}
